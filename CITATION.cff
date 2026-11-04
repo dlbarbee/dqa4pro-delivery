@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use these files, please cite the article below."
+title: "Daily QA 4 Pro delivery files: Developer Mode XML and DICOM RT plans"
+authors:
+  - family-names: Barbee
+    given-names: David
+repository-code: "https://github.com/dlbarbee/dqa4pro-delivery"
+license: MIT
+preferred-citation:
+  type: article
+  title: "Characterization of the Daily QA 4 Pro for beam, image-guidance, surface-guidance, and active isocenter verification on modern linear accelerators"
+  authors:
+    - family-names: Barbee
+      given-names: David
+  journal: "Journal of Applied Clinical Medical Physics"
+  year: 2026
+  # doi: add on acceptance

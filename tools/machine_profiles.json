@@ -1,0 +1,190 @@
+{
+  "truebeam-m120": {
+    "description": "Varian TrueBeam / Clinac, Millennium 120 MLC (60 pairs: 10 x 10 mm, 40 x 5 mm, 10 x 10 mm)",
+    "manufacturer": "Varian Medical Systems",
+    "mlc": [
+      {
+        "type": "MLCX",
+        "leaf_widths_mm": [
+          [
+            10,
+            10.0
+          ],
+          [
+            40,
+            5.0
+          ],
+          [
+            10,
+            10.0
+          ]
+        ]
+      }
+    ],
+    "jaws": [
+      "X",
+      "Y"
+    ],
+    "energies": [
+      "6X",
+      "6FFF",
+      "10X",
+      "10FFF",
+      "15X",
+      "18X",
+      "6E",
+      "9E",
+      "12E",
+      "16E",
+      "20E"
+    ],
+    "validated": true,
+    "source": "Leaf boundaries read from the author's TrueBeam DICOM RT plans (-200 to +200 mm).",
+    "notes": "Geometry of the published measurements."
+  },
+  "truebeam-hd120": {
+    "description": "Varian TrueBeam STx / Edge, HD120 MLC (60 pairs: 14 x 5 mm, 32 x 2.5 mm, 14 x 5 mm)",
+    "manufacturer": "Varian Medical Systems",
+    "mlc": [
+      {
+        "type": "MLCX",
+        "leaf_widths_mm": [
+          [
+            14,
+            5.0
+          ],
+          [
+            32,
+            2.5
+          ],
+          [
+            14,
+            5.0
+          ]
+        ]
+      }
+    ],
+    "jaws": [
+      "X",
+      "Y"
+    ],
+    "energies": [
+      "6X",
+      "6FFF",
+      "10X",
+      "10FFF",
+      "15X"
+    ],
+    "validated": false,
+    "source": "Central 32 pairs 2.5 mm, outer 28 pairs 5 mm projected at isocenter, 22 cm span (e.g. PMC7807868).",
+    "notes": "Derived plans were not delivered by the author. Check every aperture in your TPS."
+  },
+  "varian-ethos-halcyon": {
+    "description": "Varian Ethos / Halcyon, dual-layer MLC (MLCX1 28 x 10 mm, MLCX2 29 x 10 mm, offset by half a leaf), no jaws",
+    "manufacturer": "Varian Medical Systems",
+    "mlc": [
+      {
+        "type": "MLCX1",
+        "leaf_widths_mm": [
+          [
+            28,
+            10.0
+          ]
+        ],
+        "park_mm": -140.0,
+        "min_gap_mm": 0.0
+      },
+      {
+        "type": "MLCX2",
+        "leaf_widths_mm": [
+          [
+            29,
+            10.0
+          ]
+        ],
+        "park_mm": 140.0,
+        "min_gap_mm": 0.0
+      }
+    ],
+    "jaws": [
+      "X",
+      "Y"
+    ],
+    "fixed_jaws_mm": [
+      -140.0,
+      140.0
+    ],
+    "energies": [
+      "6FFF"
+    ],
+    "validated": true,
+    "source": "Leaf boundaries, parking positions and fixed jaw values read from the author's Ethos DICOM RT plan.",
+    "notes": "A native Ethos daily QA plan with AM W-L is provided in rt_plans/Ethos; prefer it over conversion."
+  },
+  "elekta-agility": {
+    "description": "Elekta Versa HD / Infinity / Harmony, Agility MLC (80 pairs x 5 mm)",
+    "manufacturer": "Elekta",
+    "mlc": [
+      {
+        "type": "MLCX",
+        "leaf_widths_mm": [
+          [
+            80,
+            5.0
+          ]
+        ]
+      }
+    ],
+    "jaws": [
+      "ASYMY"
+    ],
+    "energies": [
+      "6X",
+      "6FFF",
+      "10X",
+      "10FFF",
+      "15X",
+      "18X"
+    ],
+    "validated": false,
+    "source": "160 leaves, 5 mm at isocenter, 40 x 40 cm maximum field (Elekta, 2012).",
+    "notes": "Not delivered by the author. Device types written by your TPS may differ; prefer --template with a plan exported from your own TPS."
+  },
+  "elekta-mlci2": {
+    "description": "Elekta Synergy, MLCi2 (40 pairs x 10 mm)",
+    "manufacturer": "Elekta",
+    "mlc": [
+      {
+        "type": "MLCX",
+        "leaf_widths_mm": [
+          [
+            40,
+            10.0
+          ]
+        ]
+      }
+    ],
+    "jaws": [
+      "ASYMX",
+      "ASYMY"
+    ],
+    "energies": [
+      "6X",
+      "10X",
+      "15X",
+      "18X"
+    ],
+    "validated": false,
+    "source": "40 leaf pairs, 10 mm at isocenter (vendor specification); not independently confirmed here.",
+    "notes": "Not delivered by the author. 2 x 2 cm apertures are coarse with 10 mm leaves; prefer --template."
+  },
+  "varian-accela": {
+    "description": "Varian Accela",
+    "manufacturer": "Varian Medical Systems",
+    "mlc": null,
+    "energies": null,
+    "validated": false,
+    "source": "No published MLC geometry found (November 2026).",
+    "notes": "Use --template with any plan exported for your machine, and open an issue with the leaf boundaries so a profile can be added."
+  }
+}

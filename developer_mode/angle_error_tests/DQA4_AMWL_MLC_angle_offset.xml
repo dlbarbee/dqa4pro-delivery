@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  DQA4_AMWL_MLC_angle_offset.xml
+  TrueBeam Developer Mode beam for the Sun Nuclear/Mirion Daily QA 4 Pro.
+  Author: David Barbee, PhD. Source: https://github.com/dlbarbee/dqa4pro-delivery (MIT License).
+  Reference only, not vendor-endorsed. Developer Mode bypasses certain clinical interlocks: review every
+  control point, edit energy, dose rate and couch positions for your machine, and deliver only in
+  non-clinical mode with no patient in the room. See DISCLAIMER.md.
+  !!! COLLISION HAZARD: THE COUCH ROTATES DURING THIS BEAM (couch 0 -> 90 -> 270 IEC) and the gantry
+  moves through 8 angles without operator input. Before delivery, RETRACT the kV and MV imager arms (or
+  place them at mid position): extended imager arms WILL COLLIDE with the couch or phantom when the couch
+  rotates. Confirm clearance in a dry run, watch the room monitor, and keep a hand on the motion stop.
+  WARNING: ANGLE-ERROR TEST FILE. Commanded angles are deliberately offset from nominal (0.5-2.0 deg)
+  to test analysis sensitivity. Do NOT use for routine QA.
+-->
+<VarianResearchBeam SchemaVersion="1.0">
+  <SetBeam>
+    <Id>1</Id>
+    <TreatmentMode>FTM</TreatmentMode>
+    <MLCModel>NDS120</MLCModel>
+    <TolTable>
+      <GantryRtn>1</GantryRtn>
+      <CollRtn>1</CollRtn>
+      <CouchVrt>60</CouchVrt>
+      <CouchLat>40</CouchLat>
+      <CouchLng>70</CouchLng>
+      <CouchRtn>10</CouchRtn>
+      <Y12>1</Y12>
+      <X12>1</X12>
+    </TolTable>
+    <Accs />
+    <ControlPoints>
+      <!-- ═══════════════════════════════════════════════════════════════ -->
+      <!-- SECTION 1: GANTRY ROTATION  (8 angles × 50 MU = 400 MU total) -->
+      <!-- ANGLE-TEST OFFSETS APPLIED                                      -->
+      <!-- ═══════════════════════════════════════════════════════════════ -->
+      <!-- CP0: Full setup — G315 -> 315.5 (+0.5) -->
+      <Cp>
+        <SubBeam>
+          <Seq>0</Seq>
+        </SubBeam>
+        <Energy>6x</Energy>
+        <Mu>0</Mu>
+        <DRate>600</DRate>
+        <GantryRtn>315.5</GantryRtn>
+        <CollRtn>180</CollRtn>
+        <CouchVrt>100</CouchVrt>
+        <CouchLat>100</CouchLat>
+        <CouchLng>100</CouchLng>
+        <CouchRtn>180</CouchRtn>
+        <CouchPit>0</CouchPit>
+        <CouchRol>0</CouchRol>
+        <Y1>1.2</Y1>
+        <Y2>1.2</Y2>
+        <X1>1.2</X1>
+        <X2>1.2</X2>
+        <Mlc>
+          <ID>1</ID>
+          <B>2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2</B>
+          <A>-1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 1 1 1 1 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9 -1.9</A>
+        </Mlc>
+      </Cp>
+      <!-- CP1: Deliver 50 MU at G315.5 -->
+      <Cp><Mu>50</Mu></Cp>
+      <!-- CP2: Rotate to G270 -> 269.5 (-0.5) -->
+      <Cp><GantryRtn>269.5</GantryRtn></Cp>
+      <!-- CP3: Deliver 50 MU at G269.5 -->
+      <Cp><Mu>100</Mu></Cp>
+      <!-- CP4: Rotate to G225 -> 226.0 (+1.0) -->
+      <Cp><GantryRtn>226</GantryRtn></Cp>
+      <!-- CP5: Deliver 50 MU at G226 -->
+      <Cp><Mu>150</Mu></Cp>
+      <!-- CP6: Rotate to G180 (nominal transition, unchanged) -->
+      <Cp><GantryRtn>180</GantryRtn></Cp>
+      <!-- CP7: Deliver 50 MU at G180 -->
+      <Cp><Mu>200</Mu></Cp>
+      <!-- CP8: Rotate to G135 -> 136.5 (+1.5) -->
+      <Cp><GantryRtn>136.5</GantryRtn></Cp>
+      <!-- CP9: Deliver 50 MU at G136.5 -->
+      <Cp><Mu>250</Mu></Cp>
+      <!-- CP10: Rotate to G90 -> 88.5 (-1.5) -->
+      <Cp><GantryRtn>88.5</GantryRtn></Cp>
+      <!-- CP11: Deliver 50 MU at G88.5 -->
+      <Cp><Mu>300</Mu></Cp>
+      <!-- CP12: Rotate to G45 -> 47.0 (+2.0) -->
+      <Cp><GantryRtn>47</GantryRtn></Cp>
+      <!-- CP13: Deliver 50 MU at G47 -->
+      <Cp><Mu>350</Mu></Cp>
+      <!-- CP14: Rotate to G0 -> 2.0 (+2.0 positive) -->
+      <Cp><GantryRtn>2</GantryRtn></Cp>
+      <!-- CP15: Deliver 50 MU at G2 -->
+      <Cp><Mu>400</Mu></Cp>
+      <!-- ════════════════════════════════════════════════════════════════════ -->
+      <!-- SECTION 2: COLLIMATOR ROTATION  (3 angles × 50 MU = 150 MU total) -->
+      <!-- ════════════════════════════════════════════════════════════════════ -->
+      <!-- CP16: Transition — gantry to G180 (nominal), Coll 180 (nominal) -->
+      <Cp><GantryRtn>180</GantryRtn><CollRtn>180</CollRtn></Cp>
+      <!-- CP17: Deliver 50 MU at C0 (nominal) -->
+      <Cp><Mu>450</Mu></Cp>
+      <!-- CP18: Rotate collimator to C90 -> 88.0 (-2.0) -->
+      <Cp><CollRtn>88</CollRtn></Cp>
+      <!-- CP19: Deliver 50 MU at C88 -->
+      <Cp><Mu>500</Mu></Cp>
+      <!-- CP20: Rotate collimator to C270 -> 271.0 (+1.0) -->
+      <Cp><CollRtn>271</CollRtn></Cp>
+      <!-- CP21: Deliver 50 MU at C271 -->
+      <Cp><Mu>550</Mu></Cp>
+      <!-- CP22: Return collimator to C0 (180 nominal, unchanged) -->
+      <Cp><CollRtn>180</CollRtn></Cp>
+      <!-- ══════════════════════════════════════════════════════════════════ -->
+      <!-- SECTION 3: COUCH ROTATION  (3 angles × 50 MU = 150 MU total)    -->
+      <!-- ══════════════════════════════════════════════════════════════════ -->
+      <!-- CP23: Deliver 50 MU at Couch=0 (180 nominal, unchanged) -->
+      <Cp><Mu>600</Mu></Cp>
+      <!-- CP24: Rotate couch to Co90 -> 271.0 (+1.0) -->
+      <Cp><CouchRtn>271</CouchRtn></Cp>
+      <!-- CP25: Deliver 50 MU at Couch=271 -->
+      <Cp><Mu>650</Mu></Cp>
+      <!-- CP26: Rotate couch to Co270 -> 88.0 (-2.0) -->
+      <Cp><CouchRtn>88</CouchRtn></Cp>
+      <!-- CP27: Deliver 50 MU at Couch=88 -->
+      <Cp><Mu>700</Mu></Cp>
+    </ControlPoints>
+  </SetBeam>
+</VarianResearchBeam>
