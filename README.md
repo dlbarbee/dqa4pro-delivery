@@ -42,11 +42,11 @@ Machine names are generic (`TrueBeam`, `Edge`, `Ethos`): set yours with `rp_reta
 |---|---|
 | `active_measurement_wl/DQA4_AMWL_MLC.xml` | AM W-L in one beam: 8 gantry angles, collimator 0/90/270, couch 0/90/270, 50 MU each; 2 × 2 cm MLC field (2.4 cm jaws). Recommended |
 | `active_measurement_wl/DQA4_AMWL_Jaw.xml` | Same sequence with a 2 × 2 cm jaw-defined field |
+| `imaging_wl/DQA4_ImagingWL.xml` | Imaging W-L in one beam: 8 gantry angles, each an integrated MV image of two 2 × 2 cm aperture sets (8 MU each) plus a kV image, then MV at couch 90/270 and collimator 90/270; about 7.5 min |
 | `angle_error_tests/DQA4_AMWL_MLC_angle_offset.xml` | **Error-injection test**: AM W-L with gantry, collimator and couch deliberately offset 0.5–2.0° |
 | `angle_error_tests/DQA4_ImagingWL_angle_offset.xml` | **Error-injection test**: Imaging W-L (8 gantry kV + integrated MV, couch and collimator MV) with deliberate angle offsets |
 
-The angle-error files reproduce the sensitivity tests in the paper. **Never use them for routine QA.** A nominal
-Imaging W-L file will be added to `developer_mode/imaging_wl/`.
+The angle-error files reproduce the sensitivity tests in the paper. **Never use them for routine QA.**
 
 ### Tools: [`tools/`](tools/)
 

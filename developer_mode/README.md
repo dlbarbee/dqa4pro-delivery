@@ -6,7 +6,7 @@ By David Barbee, PhD. Each file starts with a header naming the author, source a
 |---|---|---|
 | `active_measurement_wl/` | `DQA4_AMWL_MLC.xml` | AM W-L, 28 control points: gantry 225→180 (8 angles, IEC), collimator 0/90/270, couch 0/90/270; 50 MU each, 6 MV, 600 MU/min; 2 × 2 cm MLC aperture, 2.4 cm jaws |
 | `active_measurement_wl/` | `DQA4_AMWL_Jaw.xml` | Same, 2 × 2 cm jaw-defined field |
-| `imaging_wl/` | (nominal Imaging W-L, to be added) | |
+| `imaging_wl/` | `DQA4_ImagingWL.xml` | Imaging W-L, 50 control points: 8 gantry angles, each an integrated MV image of two MLC aperture sets (8 MU each) and a kV image; then MV at couch 90/270 and collimator 90/270. Same sequence as the angle-error build, at nominal angles |
 | `angle_error_tests/` | `DQA4_AMWL_MLC_angle_offset.xml` | AM W-L with deliberate gantry/collimator/couch offsets of 0.5–2.0° |
 | `angle_error_tests/` | `DQA4_ImagingWL_angle_offset.xml` | Imaging W-L, 50 control points: 8 gantry angles with integrated MV (two MLC apertures per angle, 8 MU each) and kV, then couch and collimator MV, with deliberate angle offsets |
 
